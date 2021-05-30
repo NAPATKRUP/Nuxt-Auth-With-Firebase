@@ -21,14 +21,14 @@
           required
         ></v-text-field>
         <v-btn
+          type="submit"
           class="mr-4"
           color="primary"
-          @click="login"
         >
           Login
         </v-btn>
         <div v-if="isError" class="my-4">
-          <p class="red--text overline">{{ errMsg }}</p>
+          <p class="red--text overline">{{ errMessage }}</p>
         </div>
       </form>
     </v-card>
@@ -44,7 +44,7 @@ export default {
       password: ""
     },
     isError: false,
-    errMsg: "",
+    errMessage: "",
     showPassword: false
   }),
   methods: {
@@ -57,7 +57,7 @@ export default {
         })
         .catch(error => {
           this.isError = true;
-          this.errMsg = error.code;
+          this.errMessage = error.code;
           setTimeout(() => {
             this.isError = false;
           }, 5000);

@@ -70,6 +70,8 @@
           >
             Continue
           </v-btn>
+
+          <p class="subtitle-1 ma-2">{{ getUser.email }}</p>
           <v-btn
             color="error"
             nuxt
@@ -84,6 +86,7 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
 import Logo from '~/components/Logo.vue'
 import VuetifyLogo from '~/components/VuetifyLogo.vue'
 
@@ -92,5 +95,10 @@ export default {
     Logo,
     VuetifyLogo
   },
+  computed: {
+    ...mapGetters("users", [
+      "getUser"
+    ])
+  }
 }
 </script>

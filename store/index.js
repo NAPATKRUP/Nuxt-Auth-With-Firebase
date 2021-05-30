@@ -11,12 +11,12 @@ export const actions = {
 
     if (!accessTokenCookie) return;
 
-    const decoded = JWTDecode(accessTokenCookie);
+    const decodeToken = JWTDecode(accessTokenCookie);
 
-    if (decoded) {
+    if (decodeToken) {
       commit("users/SET_USER", {
-        uid: decoded.user_id,
-        email: decoded.email
+        uid: decodeToken.user_id,
+        email: decodeToken.email
       });
     }
   }
