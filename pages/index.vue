@@ -70,6 +70,13 @@
           >
             Continue
           </v-btn>
+          <v-btn
+            color="error"
+            nuxt
+            to="/logout"
+          >
+            logout
+          </v-btn>
         </v-card-actions>
       </v-card>
     </v-col>
@@ -84,6 +91,6 @@ export default {
   components: {
     Logo,
     VuetifyLogo
-  }
+  },
 }
 </script>
